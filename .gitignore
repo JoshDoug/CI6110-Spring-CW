@@ -1,6 +1,9 @@
 # Ignore builds and dependencies
 build/
 lib/
+mvnw
+mvnw.cmd
+target/
 
 # Ignore IDE Project Files
 nbproject/
