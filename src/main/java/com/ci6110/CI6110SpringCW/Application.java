@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Ci6110SpringCwApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Ci6110SpringCwApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
