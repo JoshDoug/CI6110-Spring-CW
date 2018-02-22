@@ -8,6 +8,7 @@ target/
 # Ignore IDE Project Files
 nbproject/
 .idea/
+*.iml
 
 # Ignore Apple .DS_Store files
 .DS_Store
