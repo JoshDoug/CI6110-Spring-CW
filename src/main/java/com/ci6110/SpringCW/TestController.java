@@ -1,10 +1,9 @@
-package com.ci6110.CI6110SpringCW;
+package com.ci6110.SpringCW;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class TestController {

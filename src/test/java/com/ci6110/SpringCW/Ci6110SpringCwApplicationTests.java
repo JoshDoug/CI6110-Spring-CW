@@ -1,4 +1,4 @@
-package com.ci6110.CI6110SpringCW;
+package com.ci6110.SpringCW;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
