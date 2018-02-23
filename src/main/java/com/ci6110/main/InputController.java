@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class InputController {
 
-//    @RequestMapping("submit") // Note: can use GetMapping to scope to just Get HTTP Requests
-//    public String employeeForm() {
-//        return "greeting";
-//    }
-
     @GetMapping("/employee")
     public String employeeForm(Model model) {
         model.addAttribute("employee", new Employee());
