@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class InputController {
 
-    @GetMapping("/employee")
+    @GetMapping("/employeeForm")
     public String employeeForm(Model model) {
         model.addAttribute("employee", new Employee());
-        return "employee";
+        return "employeeForm";
     }
 
-    @PostMapping("/employee")
+    @PostMapping("/employeeForm")
     public String employeeSubmit(@ModelAttribute Employee employee) {
         return "employeeSubmit";
     }
