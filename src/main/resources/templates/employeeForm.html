@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Employee Details Form</h1>
-<form action="#" th:action="@{/employee}" th:object="${employee}" method="post">
+<form action="#" th:action="@{/employeeForm}" th:object="${employee}" method="post">
     <p>Id: <input type="text" th:field="*{id}" /></p>
     <p>Name: <input type="text" th:field="*{name}" /></p>
     <p>Salary: <input type="text" th:field="*{salary}" /></p>
