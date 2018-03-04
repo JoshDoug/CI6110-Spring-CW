@@ -27,11 +27,13 @@ public class EmployeeController {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+//    EmployeeRepository employeeRepository;
 
     @PostMapping("/employeeForm")
     public String employeeSubmit(@ModelAttribute Employee employee) {
         jdbcTemplate.update("INSERT INTO EMPLOYEE(FIRST_NAME, LAST_NAME, SALARY) VALUES (?,?,?)",
                 employee.getFirstName(), employee.getLastName(), employee.getSalary());
+//        employeeRepository.save(employee);
         return "employeeSubmit";
     }
 

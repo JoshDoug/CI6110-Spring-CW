@@ -9,7 +9,7 @@ public class Employee {
     @Id
     @Column(name="EMPLOYEE_ID")
     @GeneratedValue
-    private long id;
+    private Long id;
     @Column(name="FIRST_NAME")
     private String firstName;
     @Column(name="LAST_NAME")
@@ -21,7 +21,7 @@ public class Employee {
         super();
     }
 
-    public Employee(long id, String firstName, String lastName, float salary) {
+    public Employee(Long id, String firstName, String lastName, float salary) {
         super();
         this.id = id;
         this.firstName = firstName;
