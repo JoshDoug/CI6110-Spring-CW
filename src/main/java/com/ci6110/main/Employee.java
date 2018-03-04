@@ -7,34 +7,34 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @Column(name="EMPLOYEE_ID")
     @GeneratedValue
-    private Long id;
-    @Column(name="FIRST_NAME")
+    private Long employeeId;
+
+    @Column
     private String firstName;
-    @Column(name="LAST_NAME")
+
+    @Column
     private String lastName;
-    @Column(name="SALARY")
+
+    @Column
     private float salary; // Might make more sense to use BigDecimal here
 
     public Employee() {
         super();
     }
 
-    public Employee(Long id, String firstName, String lastName, float salary) {
-        super();
-        this.id = id;
+    public Employee(String firstName, String lastName, float salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
     }
 
-    public long getId() {
-        return id;
+    public Long getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setEmployeeId(Long id) {
+        this.employeeId = id;
     }
 
     public String getFirstName() {
