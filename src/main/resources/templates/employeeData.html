@@ -7,11 +7,14 @@
 <body>
 <h1>Employee Data</h1>
 <table>
-<tr th:each="employee:${employees}">
-    <td th:text="${employee.firstName}">keyvalue</td>
-    <td th:text="${employee.lastName}">num</td>
-    <td th:text="${employee.salary}">num</td>
-</tr>
+    <tr th:each="employee:${employees}">
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.salary}"></td>
+    </tr>
+    <tr>
+        <td th:text="${averageSalary}"></td>
+    </tr>
 </table>
 <a href="/employeeForm">Add another employee</a>
 </body>

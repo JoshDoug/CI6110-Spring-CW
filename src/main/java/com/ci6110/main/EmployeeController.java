@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Controller
 public class EmployeeController {
     private EmployeeServices employeeServices;
@@ -35,7 +40,22 @@ public class EmployeeController {
 
     @RequestMapping("/employeeData")
     public String employeeData(Model model) {
-        model.addAttribute("employees", this.employeeServices.getAllEmployees());
+        List<Employee> employeeList = this.employeeServices.getAllEmployees();
+        String avgSalary = averageSalary(employeeSalaries(employeeList));
+
+        model.addAttribute("employees", employeeList);
+        model.addAttribute("averageSalary", avgSalary);
+
         return "employeeData";
+    }
+
+    public List<Float> employeeSalaries(List<Employee> employeeList) {
+        return employeeList.stream().map(Employee::getSalary).collect(Collectors.toList());
+    }
+
+    public String averageSalary(List<Float> salaries) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        decimalFormat.setRoundingMode(RoundingMode.CEILING);
+        return decimalFormat.format(salaries.stream().mapToDouble(Float::doubleValue).sum() / salaries.size());
     }
 }
