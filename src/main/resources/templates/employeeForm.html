@@ -7,8 +7,8 @@
 <body>
 <h1>Employee Details Form</h1>
 <form action="#" th:action="@{/employeeForm}" th:object="${employee}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+    <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
     <p>Salary: <input type="text" th:field="*{salary}" /></p>
     <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
 </form>
