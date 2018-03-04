@@ -1,7 +1,6 @@
 package com.ci6110.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,13 +25,10 @@ public class EmployeeController {
     }
 
     @Autowired
-//    JdbcTemplate jdbcTemplate;
     EmployeeRepository employeeRepository;
 
     @PostMapping("/employeeForm")
     public String employeeSubmit(@ModelAttribute Employee employee) {
-//        jdbcTemplate.update("INSERT INTO EMPLOYEE(FIRST_NAME, LAST_NAME, SALARY) VALUES (?,?,?)",
-//                employee.getFirstName(), employee.getLastName(), employee.getSalary());
         employeeRepository.save(employee);
         return "employeeSubmit";
     }
