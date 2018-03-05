@@ -3,10 +3,7 @@ package com.ci6110.main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -36,6 +33,19 @@ public class EmployeeController {
     public String employeeSubmit(@ModelAttribute Employee employee) {
         employeeRepository.save(employee);
         return "employeeSubmit";
+    }
+
+    @RequestMapping("/deleteEmployee/{employeeId}")
+    public String deleteEmployee(Model model, @PathVariable(required = true, name = "employeeId") Long employeeId) {
+        employeeRepository.deleteById(employeeId);
+
+        List<Employee> employeeList = this.employeeServices.getAllEmployees();
+        String avgSalary = averageSalary(employeeSalaries(employeeList));
+
+        model.addAttribute("employees", employeeList);
+        model.addAttribute("averageSalary", avgSalary);
+
+        return "employeeData";
     }
 
     @RequestMapping("/employeeData")
