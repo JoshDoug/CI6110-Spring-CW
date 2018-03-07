@@ -13,12 +13,18 @@
         <td th:text="${employee.salary}"></td>
         <td><a th:href="@{/employeeUpdate/__${employee.employeeId}__}">Edit</a></td>
         <td><a th:href="@{/deleteEmployee/__${employee.employeeId}__}">Delete</a></td>
-        <!--<td th:text="${employee.getEmployeeId()}"></td>-->
     </tr>
     <tr>
+        <td>Average Salary</td>
         <td th:text="${averageSalary}"></td>
+    </tr>
+    <tr>
+        <td>Max Salary</td>
+        <td th:text="${maxSalary}"></td>
     </tr>
 </table>
 <a href="/employeeForm">Add another employee</a>
+<br>
+<a href="/employeeData">View employee data</a>
 </body>
 </html>

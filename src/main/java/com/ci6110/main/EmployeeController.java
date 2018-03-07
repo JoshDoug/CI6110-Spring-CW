@@ -90,6 +90,7 @@ public class EmployeeController {
     public String employeeData(Model model) {
         model.addAttribute("employees", this.employeeServices.getAllEmployees());
         model.addAttribute("averageSalary", this.employeeServices.averageSalary());
+        model.addAttribute("maxSalary", this.employeeServices.maxSalary());
         return "employeeData";
     }
 }

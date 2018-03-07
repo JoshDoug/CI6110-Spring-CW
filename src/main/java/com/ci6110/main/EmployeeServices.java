@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,5 +38,16 @@ public class EmployeeServices {
 
     public String averageSalary() {
         return averageSalary(employeeSalaries(getAllEmployees()));
+    }
+
+    public String maxSalary() {
+        List<Float> salaries = employeeSalaries(getAllEmployees());
+        Optional<Float> max = salaries.stream().reduce(Float::max);
+
+        if(max.isPresent()) {
+            return max.get().toString();
+        } else {
+            return "No max salaries";
+        }
     }
 }
