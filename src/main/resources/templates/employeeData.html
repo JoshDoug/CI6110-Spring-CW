@@ -11,6 +11,7 @@
         <td th:text="${employee.firstName}"></td>
         <td th:text="${employee.lastName}"></td>
         <td th:text="${employee.salary}"></td>
+        <td><a th:href="@{/employeeUpdate/__${employee.employeeId}__}">Edit</a></td>
         <td><a th:href="@{/deleteEmployee/__${employee.employeeId}__}">Delete</a></td>
         <!--<td th:text="${employee.getEmployeeId()}"></td>-->
     </tr>

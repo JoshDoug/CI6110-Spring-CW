@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -46,6 +47,20 @@ public class EmployeeController {
         model.addAttribute("averageSalary", avgSalary);
 
         return "employeeData";
+    }
+
+    @GetMapping("/employeeUpdate/{employeeId}")
+    public String editEmployee(Model model, @PathVariable(required = true, name = "employeeId") Long employeeId) {
+        Optional<Employee> employee = employeeRepository.findById(employeeId);
+        model.addAttribute("employee", employee);
+        return "employeeUpdate";
+    }
+
+    @PostMapping("/employeeUpdate")
+    public String submitEdit(@ModelAttribute Employee employeeEdit) {
+        Optional<Employee> employee = employeeRepository.findById(employeeEdit.getEmployeeId());
+        employeeRepository.save(employeeEdit);
+        return "employeeSubmit";
     }
 
     @RequestMapping("/employeeData")
