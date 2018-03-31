@@ -9,15 +9,18 @@
     <packaging>jar</packaging>
 
     <name>CI6110-Spring-CW</name>
-    <description>Demo project for Spring Boot</description>
+    <description>University project using Spring Boot to build a CRUD application for employee data</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>9</java.version>
     </properties>
 
