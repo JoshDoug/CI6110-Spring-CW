@@ -60,4 +60,8 @@ public class Employee {
     public void setSalary(float salary) {
         this.salary = salary;
     }
+
+    public float getAnnualSalary() {
+        return 12 * salary;
+    }
 }

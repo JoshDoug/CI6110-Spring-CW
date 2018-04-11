@@ -8,7 +8,8 @@
 <h1>Employee Details Submission</h1>
 <p th:text="'First name: ' + ${employee.firstName}"/>
 <p th:text="'Last name: ' + ${employee.lastName}"/>
-<p th:text="'Salary: ' + ${employee.salary}"/>
+<p th:text="'Salary: £' + ${employee.salary}"/>
+<p th:text="'Annual Salary: £' + ${employee.getAnnualSalary()}"/>
 <a href="/employeeForm">Add another employee</a>
 <br>
 <a href="/employeeData">View employee data</a>

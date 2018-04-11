@@ -7,20 +7,32 @@
 <body>
 <h1>Employee Data</h1>
 <table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>Annual Salary</th>
+        <td>Edit Employee Data</td>
+        <td>Delete Employee</td>
+    </tr>
     <tr th:each="employee:${employees}">
         <td th:text="${employee.firstName}"></td>
         <td th:text="${employee.lastName}"></td>
-        <td th:text="${employee.salary}"></td>
+        <td th:text="'£' + ${employee.salary}"></td>
+        <td th:text="'£' + ${employee.getAnnualSalary()}"></td>
         <td><a th:href="@{/employeeUpdate/__${employee.employeeId}__}">Edit</a></td>
         <td><a th:href="@{/deleteEmployee/__${employee.employeeId}__}">Delete</a></td>
     </tr>
+</table>
+<h2>Additional Employee Data:</h2>
+<table>
     <tr>
-        <td>Average Salary</td>
-        <td th:text="${averageSalary}"></td>
+        <td>Average Employee Salary: £</td>
+        <td th:text="'£' + ${averageSalary}"></td>
     </tr>
     <tr>
-        <td>Max Salary</td>
-        <td th:text="${maxSalary}"></td>
+        <td>Max Employee Salary:</td>
+        <td th:text="'£' + ${maxSalary}"></td>
     </tr>
 </table>
 <a href="/employeeForm">Add another employee</a>
